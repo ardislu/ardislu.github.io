@@ -1,0 +1,122 @@
+/* Custom theme */
+@import "~@angular/material/theming";
+@include mat-core(); // Include only once per project
+
+// Primary color palette, original color #558dd1
+$al-blue: (
+  50: #e6f2fb,
+  100: #c3dff6,
+  200: #a0ccf0,
+  300: #80b8e8,
+  400: #6ba9e3,
+  500: #5d9bde,
+  600: #558dd1,
+  700: #4c7bbe,
+  800: #446aac,
+  900: #374d8b,
+  A100: #FFFFFF,
+  A200: #DAE8FF,
+  A400: #A7C8FF,
+  A700: #8DB9FF,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  ),
+);
+
+// Accent color palette, original color #22b5c2
+$al-teal: (
+  50: #e0f6f7,
+  100: #b2e9ea,
+  200: #82dadd,
+  300: #55cbd1,
+  400: #39c0c8,
+  500: #22b5c2,
+  600: #21a6b0,
+  700: #1f9197,
+  800: #1c7d80,
+  900: #165a58,
+  A100: #CDF8FF,
+  A200: #9AF2FF,
+  A400: #67EBFF,
+  A700: #4DE7FF,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  ),
+);
+
+// Warning color palette, original color #e7d26a
+$al-yellow: (
+  50: #fcfaea,
+  100: #f7f1ca,
+  200: #f2e7a9,
+  300: #edde8c,
+  400: #ead879,
+  500: #e7d26a,
+  600: #e1c264,
+  700: #d9ad5d,
+  800: #d19955,
+  900: #c27948,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #fff9dc,
+  A700: #fff5c3,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  ),
+);
+
+// Theme color palettes
+$al-primary: mat-palette($al-blue);
+$al-accent: mat-palette($al-teal);
+$al-warn: mat-palette($al-yellow);
+
+$ardis-theme: mat-light-theme(
+  (
+    color: (
+      primary: $al-primary,
+      accent: $al-accent,
+      warn: $al-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($ardis-theme);
