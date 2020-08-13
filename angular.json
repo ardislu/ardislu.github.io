@@ -50,7 +50,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/ardis-theme.scss",
+              {
+                "input": "src/ardis-theme.scss"
+              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -115,7 +117,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/ardis-theme.scss",
+              {
+                "input": "src/ardis-theme.scss"
+              },
               "src/styles.scss"
             ],
             "scripts": []

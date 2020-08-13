@@ -14,10 +14,10 @@ $al-blue: (
   700: #4c7bbe,
   800: #446aac,
   900: #374d8b,
-  A100: #FFFFFF,
-  A200: #DAE8FF,
-  A400: #A7C8FF,
-  A700: #8DB9FF,
+  A100: #ffffff,
+  A200: #dae8ff,
+  A400: #a7c8ff,
+  A700: #8db9ff,
   contrast: (
     50: $black-87-opacity,
     100: $black-87-opacity,
@@ -48,10 +48,10 @@ $al-teal: (
   700: #1f9197,
   800: #1c7d80,
   900: #165a58,
-  A100: #CDF8FF,
-  A200: #9AF2FF,
-  A400: #67EBFF,
-  A700: #4DE7FF,
+  A100: #cdf8ff,
+  A200: #9af2ff,
+  A400: #67ebff,
+  A700: #4de7ff,
   contrast: (
     50: $black-87-opacity,
     100: $black-87-opacity,
@@ -109,7 +109,7 @@ $al-primary: mat-palette($al-blue);
 $al-accent: mat-palette($al-teal);
 $al-warn: mat-palette($al-yellow);
 
-$ardis-theme: mat-light-theme(
+$ardis-theme: mat-dark-theme(
   (
     color: (
       primary: $al-primary,
