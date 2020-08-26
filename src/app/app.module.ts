@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 // Angular Core and Routing
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,6 +22,8 @@ import { AppComponent } from './app.component';
 const coreModules = [
   BrowserModule,
   BrowserAnimationsModule,
+  LayoutModule,
+  FlexLayoutModule,
   HttpClientModule,
   AppRoutingModule
 ]
