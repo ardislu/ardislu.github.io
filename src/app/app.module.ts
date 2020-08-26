@@ -19,31 +19,23 @@ import { MatExpansionModule } from '@angular/material/expansion';
 // User defined components
 import { AppComponent } from './app.component';
 
-const coreModules = [
-  BrowserModule,
-  BrowserAnimationsModule,
-  LayoutModule,
-  FlexLayoutModule,
-  HttpClientModule,
-  AppRoutingModule
-]
-
-const materialModules = [
-  MatToolbarModule,
-  MatGridListModule,
-  MatCardModule,
-  MatButtonModule,
-  MatIconModule,
-  MatExpansionModule
-]
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    ...coreModules,
-    ...materialModules
+    BrowserModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
