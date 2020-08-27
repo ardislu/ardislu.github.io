@@ -21,103 +21,142 @@
 <!-- Intentionally blank, to give spacing since the header is fixed -->
 <mat-toolbar></mat-toolbar>
 
-<mat-grid-list [cols]="8" rowHeight="8:1" gutterSize="55px">
-  <!-- ardis.lu card -->
-  <mat-grid-tile [colspan]="2" [rowspan]="12">
-    <mat-card class="project-card">
+<!-- Card design for xs size screen -->
+<div fxHide fxShow.xs fxLayout="column" class="xs-card-container">
+  <div fxFlex="25%" *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12]">
+    <mat-card class="main-card">
       <mat-card-title>
-        ardis.lu
+        <div>Project {{ num }}</div>
+        <div fxFlex></div>
+        <button mat-icon-button>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
       </mat-card-title>
-      <mat-card-content>
-        <mat-accordion>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                What
-              </mat-panel-title>
-              <mat-panel-description>
-                A frontend
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>
-              <a href="https://ardis.lu">ardis.lu</a> is a personal project to learn web technologies.
-            </p>
-          </mat-expansion-panel>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                How
-              </mat-panel-title>
-              <mat-panel-description>
-                Angular
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>
-              This website is developed using Angular.
-            </p>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </mat-card-content>
     </mat-card>
-  </mat-grid-tile>
+  </div>
+</div>
 
-  <!-- RESTful API -->
-  <mat-grid-tile [colspan]="6" [rowspan]="12">
-    <mat-card class="project-card">
+<!-- Card design for sm size screen -->
+<div fxHide fxShow.sm fxLayout="column" class="sm-card-container">
+  <div fxFlex="25%" *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12]">
+    <mat-card class="main-card">
       <mat-card-title>
-        RESTful API
+        <div>Project {{ num }}</div>
       </mat-card-title>
       <mat-card-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a sapien mattis, blandit eros blandit, molestie est.
-        Phasellus vel interdum sapien. Cras sollicitudin vehicula mauris sed tristique. Duis quis faucibus augue.
-        Integer nunc turpis, egestas et neque vel, aliquam molestie arcu. Curabitur semper, odio non porta varius, massa
-        nisi tempus ligula, vitae aliquet turpis enim a eros. Curabitur blandit neque non diam tempor tincidunt. Sed
-        pretium ipsum ut diam fringilla, sit amet porta orci aliquam. Vivamus blandit, dui nec lobortis accumsan, risus
-        elit malesuada enim, vitae aliquet enim enim ut nunc. Sed volutpat purus sit amet augue aliquam eleifend.
-        Curabitur tempor quis nibh vitae aliquet. Suspendisse sed erat tortor. Sed vitae iaculis ante. Nunc placerat
-        metus sit amet magna congue, faucibus finibus augue condimentum. Praesent gravida diam neque, a placerat purus
-        gravida ac. Suspendisse quam turpis, pretium maximus mauris a, luctus suscipit urna.
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a ipsum urna. Duis ac sapien vel augue faucibus
+        malesuada at sed lacus. Sed vehicula scelerisque odio. Nulla ornare vehicula quam vel rutrum. Aenean finibus
+        accumsan tincidunt. Cras odio sem, vestibulum et auctor ac, cursus ut justo. Morbi tristique dictum nibh egestas
+        viverra. Integer ullamcorper in ex in mollis. Pellentesque ut justo semper, congue nisl eu, venenatis urna.
+        Vestibulum sit amet scelerisque odio.
 
-  <!-- Project 3 -->
-  <mat-grid-tile [colspan]="4" [rowspan]="12">
-    <mat-card>
-      <mat-card-title>
-        Project 3 Title
-      </mat-card-title>
-      <mat-card-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a sapien mattis, blandit eros blandit, molestie est.
-        Phasellus vel interdum sapien. Cras sollicitudin vehicula mauris sed tristique. Duis quis faucibus augue.
-        Integer nunc turpis, egestas et neque vel, aliquam molestie arcu. Curabitur semper, odio non porta varius, massa
-        nisi tempus ligula, vitae aliquet turpis enim a eros. Curabitur blandit neque non diam tempor tincidunt. Sed
-        pretium ipsum ut diam fringilla, sit amet porta orci aliquam. Vivamus blandit, dui nec lobortis accumsan, risus
-        elit malesuada enim, vitae aliquet enim enim ut nunc. Sed volutpat purus sit amet augue aliquam eleifend.
-        Curabitur tempor quis nibh vitae aliquet. Suspendisse sed erat tortor. Sed vitae iaculis ante. Nunc placerat
-        metus sit amet magna congue, faucibus finibus augue condimentum. Praesent gravida diam neque, a placerat purus
-        gravida ac. Suspendisse quam turpis, pretium maximus mauris a, luctus suscipit urna.
+        Aenean tincidunt, magna quis dapibus placerat, sem erat vulputate felis, at pellentesque justo mi vel nibh.
+        Aliquam aliquam dignissim erat vel vulputate. Nulla finibus mi at neque venenatis, in consectetur elit
+        imperdiet. Sed ac urna cursus, aliquam est molestie, porttitor magna. Aenean purus sem, dignissim a suscipit
+        vel, viverra at urna. Morbi non euismod purus. Pellentesque elementum in ipsum eu venenatis. Maecenas posuere
+        consequat elit, ut pretium augue luctus ut. Phasellus a eros eget dui bibendum imperdiet ut vitae sapien.
+        Vivamus pretium leo sit amet diam pharetra dignissim. Duis eget ipsum eget urna tincidunt pulvinar. Vivamus eu
+        malesuada leo.
       </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </mat-card-actions>
     </mat-card>
-  </mat-grid-tile>
+  </div>
+</div>
 
-  <!-- Project 4 -->
-  <mat-grid-tile [colspan]="4" [rowspan]="12">
-    <mat-card>
+<!-- Card design for md size screen -->
+<div fxHide fxShow.md fxLayout="row wrap" class="md-card-container">
+  <div fxFlex="calc(33% - 16px)" *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12]">
+    <mat-card class="main-card">
       <mat-card-title>
-        Project 4 Demo
+        <div>Project {{ num }}</div>
       </mat-card-title>
       <mat-card-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a sapien mattis, blandit eros blandit, molestie est.
-        Phasellus vel interdum sapien. Cras sollicitudin vehicula mauris sed tristique. Duis quis faucibus augue.
-        Integer nunc turpis, egestas et neque vel, aliquam molestie arcu. Curabitur semper, odio non porta varius, massa
-        nisi tempus ligula, vitae aliquet turpis enim a eros. Curabitur blandit neque non diam tempor tincidunt. Sed
-        pretium ipsum ut diam fringilla, sit amet porta orci aliquam. Vivamus blandit, dui nec lobortis accumsan, risus
-        elit malesuada enim, vitae aliquet enim enim ut nunc. Sed volutpat purus sit amet augue aliquam eleifend.
-        Curabitur tempor quis nibh vitae aliquet. Suspendisse sed erat tortor. Sed vitae iaculis ante. Nunc placerat
-        metus sit amet magna congue, faucibus finibus augue condimentum. Praesent gravida diam neque, a placerat purus
-        gravida ac. Suspendisse quam turpis, pretium maximus mauris a, luctus suscipit urna.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a ipsum urna. Duis ac sapien vel augue faucibus
+        malesuada at sed lacus. Sed vehicula scelerisque odio. Nulla ornare vehicula quam vel rutrum. Aenean finibus
+        accumsan tincidunt. Cras odio sem, vestibulum et auctor ac, cursus ut justo. Morbi tristique dictum nibh egestas
+        viverra. Integer ullamcorper in ex in mollis. Pellentesque ut justo semper, congue nisl eu, venenatis urna.
+        Vestibulum sit amet scelerisque odio.
+
+        Aenean tincidunt, magna quis dapibus placerat, sem erat vulputate felis, at pellentesque justo mi vel nibh.
+        Aliquam aliquam dignissim erat vel vulputate. Nulla finibus mi at neque venenatis, in consectetur elit
+        imperdiet. Sed ac urna cursus, aliquam est molestie, porttitor magna. Aenean purus sem, dignissim a suscipit
+        vel, viverra at urna. Morbi non euismod purus. Pellentesque elementum in ipsum eu venenatis. Maecenas posuere
+        consequat elit, ut pretium augue luctus ut. Phasellus a eros eget dui bibendum imperdiet ut vitae sapien.
+        Vivamus pretium leo sit amet diam pharetra dignissim. Duis eget ipsum eget urna tincidunt pulvinar. Vivamus eu
+        malesuada leo.
       </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </mat-card-actions>
     </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
+
+<!-- Card design for lg size screen -->
+<div fxHide fxShow.lg fxLayout="row wrap" class="lg-card-container">
+  <div fxFlex="calc(25% - 16px)" *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12]">
+    <mat-card class="main-card">
+      <mat-card-title>
+        <div>Project {{ num }}</div>
+      </mat-card-title>
+      <mat-card-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a ipsum urna. Duis ac sapien vel augue faucibus
+        malesuada at sed lacus. Sed vehicula scelerisque odio. Nulla ornare vehicula quam vel rutrum. Aenean finibus
+        accumsan tincidunt. Cras odio sem, vestibulum et auctor ac, cursus ut justo. Morbi tristique dictum nibh egestas
+        viverra. Integer ullamcorper in ex in mollis. Pellentesque ut justo semper, congue nisl eu, venenatis urna.
+        Vestibulum sit amet scelerisque odio.
+
+        Aenean tincidunt, magna quis dapibus placerat, sem erat vulputate felis, at pellentesque justo mi vel nibh.
+        Aliquam aliquam dignissim erat vel vulputate. Nulla finibus mi at neque venenatis, in consectetur elit
+        imperdiet. Sed ac urna cursus, aliquam est molestie, porttitor magna. Aenean purus sem, dignissim a suscipit
+        vel, viverra at urna. Morbi non euismod purus. Pellentesque elementum in ipsum eu venenatis. Maecenas posuere
+        consequat elit, ut pretium augue luctus ut. Phasellus a eros eget dui bibendum imperdiet ut vitae sapien.
+        Vivamus pretium leo sit amet diam pharetra dignissim. Duis eget ipsum eget urna tincidunt pulvinar. Vivamus eu
+        malesuada leo.
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- Card design for xl size screen -->
+<div fxHide fxShow.xl fxLayout="row wrap" class="xl-card-container">
+  <div fxFlex="calc(16% - 24px)" *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12]">
+    <mat-card class="main-card">
+      <mat-card-title>
+        <div>Project {{ num }}</div>
+      </mat-card-title>
+      <mat-card-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a ipsum urna. Duis ac sapien vel augue faucibus
+        malesuada at sed lacus. Sed vehicula scelerisque odio. Nulla ornare vehicula quam vel rutrum. Aenean finibus
+        accumsan tincidunt. Cras odio sem, vestibulum et auctor ac, cursus ut justo. Morbi tristique dictum nibh egestas
+        viverra. Integer ullamcorper in ex in mollis. Pellentesque ut justo semper, congue nisl eu, venenatis urna.
+        Vestibulum sit amet scelerisque odio.
+
+        Aenean tincidunt, magna quis dapibus placerat, sem erat vulputate felis, at pellentesque justo mi vel nibh.
+        Aliquam aliquam dignissim erat vel vulputate. Nulla finibus mi at neque venenatis, in consectetur elit
+        imperdiet. Sed ac urna cursus, aliquam est molestie, porttitor magna. Aenean purus sem, dignissim a suscipit
+        vel, viverra at urna. Morbi non euismod purus. Pellentesque elementum in ipsum eu venenatis. Maecenas posuere
+        consequat elit, ut pretium augue luctus ut. Phasellus a eros eget dui bibendum imperdiet ut vitae sapien.
+        Vivamus pretium leo sit amet diam pharetra dignissim. Duis eget ipsum eget urna tincidunt pulvinar. Vivamus eu
+        malesuada leo.
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+</div>
