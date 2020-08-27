@@ -16,6 +16,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 
+// Progressive web app
+import { ServiceWorkerModule } from '@angular/service-worker';
+
+// Environment variables
+import { environment } from '../environments/environment';
+
 // User defined components
 import { AppComponent } from './app.component';
 
@@ -35,7 +41,8 @@ import { AppComponent } from './app.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
