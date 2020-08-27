@@ -88,6 +88,9 @@ MIT
 @angular/router
 MIT
 
+@angular/service-worker
+MIT
+
 ardis-lu-frontend
 
 css-loader
