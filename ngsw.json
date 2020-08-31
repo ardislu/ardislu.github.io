@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598502492966,
+  "timestamp": 1598839855739,
   "index": "https://ardis.lu/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://ardis.lu/favicon.ico",
         "https://ardis.lu/index.html",
-        "https://ardis.lu/main.d4cf80dd2185cc8ac6ae.js",
+        "https://ardis.lu/main.520a5565548de5a239da.js",
         "https://ardis.lu/manifest.webmanifest",
         "https://ardis.lu/polyfills.a4021de53358bb0fec14.js",
         "https://ardis.lu/runtime.e227d1a0e31cbccbf8ec.js",
-        "https://ardis.lu/styles.f257d4ec4ec7cbee6b5b.css"
+        "https://ardis.lu/styles.c55678a566938e6da39f.css"
       ],
       "patterns": []
     },
@@ -49,6 +49,16 @@
         "https://ardis.lu/assets/icons/firefox/firefox-marketplace-128-128.png",
         "https://ardis.lu/assets/icons/firefox/firefox-marketplace-512-512.png",
         "https://ardis.lu/assets/icons/ios/apple-touch-icon-192-192.png",
+        "https://ardis.lu/assets/icons/ios/ipad_splash.png",
+        "https://ardis.lu/assets/icons/ios/ipadpro1_splash.png",
+        "https://ardis.lu/assets/icons/ios/ipadpro2_splash.png",
+        "https://ardis.lu/assets/icons/ios/ipadpro3_splash.png",
+        "https://ardis.lu/assets/icons/ios/iphone5_splash.png",
+        "https://ardis.lu/assets/icons/ios/iphone6_splash.png",
+        "https://ardis.lu/assets/icons/ios/iphoneplus_splash.png",
+        "https://ardis.lu/assets/icons/ios/iphonex_splash.png",
+        "https://ardis.lu/assets/icons/ios/iphonexr_splash.png",
+        "https://ardis.lu/assets/icons/ios/iphonexsmax_splash.png",
         "https://ardis.lu/assets/icons/msteams/msteams-192-192.png",
         "https://ardis.lu/assets/icons/msteams/msteams-silhouette-32-32.png",
         "https://ardis.lu/assets/icons/windows/windows-smallsquare-24-24.png",
@@ -150,6 +160,16 @@
     "https://ardis.lu/assets/icons/firefox/firefox-marketplace-128-128.png": "7fb6db8c9c0337c27e9e9f71414d59d4da305a88",
     "https://ardis.lu/assets/icons/firefox/firefox-marketplace-512-512.png": "5ed7b5a2c72bfb35a79250ac50cf7dc9b570db8f",
     "https://ardis.lu/assets/icons/ios/apple-touch-icon-192-192.png": "f3d6de8ff1ed6fa671ddf95b235164b2121f7a24",
+    "https://ardis.lu/assets/icons/ios/ipad_splash.png": "9a64c81b9334a5d276b0713da9310478b76a9d14",
+    "https://ardis.lu/assets/icons/ios/ipadpro1_splash.png": "75f69d31c5c5f43de478f18123771f60c03aba1c",
+    "https://ardis.lu/assets/icons/ios/ipadpro2_splash.png": "94d21581450dd39eed339361f123b3401477c5da",
+    "https://ardis.lu/assets/icons/ios/ipadpro3_splash.png": "8026060142e9312274c715d0548b479d4071513e",
+    "https://ardis.lu/assets/icons/ios/iphone5_splash.png": "6e0ec7a89e958bba505068111bc20e788d3966db",
+    "https://ardis.lu/assets/icons/ios/iphone6_splash.png": "0eb1f77c8c3a4a4c71b8235f6f7c12ff0f6e4465",
+    "https://ardis.lu/assets/icons/ios/iphoneplus_splash.png": "9b8c1f3fb698f5f71f3f5c798e0caf9d318ced67",
+    "https://ardis.lu/assets/icons/ios/iphonex_splash.png": "08d2f9223878bbefeca705f155f7d7fa55359b87",
+    "https://ardis.lu/assets/icons/ios/iphonexr_splash.png": "511c93f9d88a6936af8684001f9342be6b899903",
+    "https://ardis.lu/assets/icons/ios/iphonexsmax_splash.png": "2b357c1d9f91235223b2e348d6eab22b896c3ebe",
     "https://ardis.lu/assets/icons/msteams/msteams-192-192.png": "eeb95a0ffd7fa2c5e5ef8ffb9490efbf725940b5",
     "https://ardis.lu/assets/icons/msteams/msteams-silhouette-32-32.png": "0bceead90e71716b741d756cd74093f8dc2b8fee",
     "https://ardis.lu/assets/icons/windows/windows-smallsquare-24-24.png": "b7d2da9498c806db9366c2c13f818db043412903",
@@ -226,12 +246,12 @@
     "https://ardis.lu/assets/images/linkedin.svg": "72be8d4093dba5aa43a193916ecfb01d7e214f93",
     "https://ardis.lu/assets/images/logo.svg": "26624e5f41034e21d05d0c519d6ec48fb5f255c4",
     "https://ardis.lu/favicon.ico": "42b188108311c4836cdb0f836dde59866df019e2",
-    "https://ardis.lu/index.html": "4f9ee5854d2dca59b41b83e14e2e497869b1ab1d",
-    "https://ardis.lu/main.d4cf80dd2185cc8ac6ae.js": "420c518155e84599245fac12f2bf108ca5cc9fa7",
+    "https://ardis.lu/index.html": "59541c31e3b61097d331c2bb26efd4d5bf7aa1cb",
+    "https://ardis.lu/main.520a5565548de5a239da.js": "d0450554c5ffc1162624dc9521741a79103e9f6a",
     "https://ardis.lu/manifest.webmanifest": "7e36aad18ba76dc1f37efe2396f01adb71a34b35",
     "https://ardis.lu/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
     "https://ardis.lu/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://ardis.lu/styles.f257d4ec4ec7cbee6b5b.css": "9cb6b30bd8e9bb9b678e718e2fe90c4e8d70c4e4"
+    "https://ardis.lu/styles.c55678a566938e6da39f.css": "3ae08cdc5a2977261de19907ee9eb95fc31f32e5"
   },
   "navigationUrls": [
     {
