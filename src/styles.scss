@@ -2,23 +2,10 @@
 @import "ardis-theme.scss";
 
 /* Global styling */
-html,
 body {
-  height: 100%;
+  margin: 0px;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-// Styling for special components
-[role="heading"] {
-  position: fixed;
-  z-index: 999;
-}
-
-// Useful classes
 .fill-space {
   // This fills the remaining space, by using flexbox.
   // Every toolbar row uses a flexbox row layout.

@@ -1,3 +1,24 @@
+.header {
+  padding: env(safe-area-inset-top); // Fill top status bar for iOS 
+  padding-left: 16px;
+  padding-right: 16px;
+  position: fixed;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 1000;
+  // @supports (-webkit-overflow-scrolling: touch) {
+  //   display: none; 
+  // }
+}
+
+.false-header {
+  padding: env(safe-area-inset-top);
+  z-index: 0;
+  position: relative;
+  background: #303030;
+}
+
 // One card per row, only top card needs adjustment
 .xs-card-container {
   > [fxFlex] {
