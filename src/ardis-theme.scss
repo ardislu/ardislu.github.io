@@ -1,6 +1,13 @@
 /* Custom theme */
 @import "~@angular/material/theming";
-@include mat-core(); // Include only once per project
+
+/* Use system font stack */
+$system-typography: mat-typography-config(
+  $font-family:
+    '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+);
+
+@include mat-core($system-typography); // Include only once per project
 
 // Primary color palette, original color #558dd1
 $al-blue: (
