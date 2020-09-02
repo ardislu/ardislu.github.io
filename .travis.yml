@@ -15,10 +15,10 @@ node_js:
 
 cache:
   directories:
-     - ./node_modules
+     - "$HOME/.npm"
 
 install:
-  - npm i
+  - npm ci
 
 script:
   - ng build --prod --base-href https://ardis.lu/
