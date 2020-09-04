@@ -1,29 +1,25 @@
 import { NgModule } from '@angular/core';
 
-// Angular Core and Routing
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+// Common (only import once)
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutModule } from '@angular/cdk/layout';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 // Material Angular
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatExpansionModule } from '@angular/material/expansion';
 
 // Progressive web app
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 // Environment variables
 import { environment } from '../environments/environment';
-
-// User defined components
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -32,20 +28,25 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    FlexLayoutModule,
     HttpClientModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatGridListModule,
-    MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatExpansionModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/logo.svg'));
+    iconRegistry.addSvgIcon('text_snippet', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/text_snippet.svg'));
+    iconRegistry.addSvgIcon('email', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/email.svg'));
+    iconRegistry.addSvgIcon('linkedin', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/linkedin.svg'));
+    iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/github.svg'));
+    iconRegistry.addSvgIcon('keyboard_arrow_right', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/keyboard_arrow_right.svg'));
+  }
+
 }

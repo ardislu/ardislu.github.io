@@ -1,0 +1,114 @@
+// One card per row, only top card needs adjustment
+.xs-card-container {
+  > [fxFlex] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  > [fxFlex]:first-child {
+    padding-top: 16px !important;
+  }
+}
+
+// One card per row, only top card needs adjustment
+.sm-card-container {
+  > [fxFlex] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  > [fxFlex]:first-child {
+    padding-top: 16px !important;
+  }
+}
+
+// 3 cards per row. First 3 cards need padding-top,
+// every 3rd card (starting with 1) needs padding-left
+// every 3rd card (starting with 3) needs padding-right
+// all other cards need equal padding on left and right
+.md-card-container {
+  > [fxFlex] {
+    padding-bottom: 16px !important;
+  }
+  > [fxFlex]:nth-child(-n + 3) {
+    padding-top: 16px !important;
+  }
+  > [fxFlex]:nth-child(3n + 1) {
+    padding-left: 16px !important;
+    padding-right: 6px !important;
+  }
+  > [fxFlex]:nth-child(3n + 2) {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  > [fxFlex]:nth-child(3n + 3) {
+    padding-left: 6px !important;
+    padding-right: 16px !important;
+  }
+}
+
+// 4 cards per row. First 4 cards need padding-top,
+// every 4th card (starting with 1) needs padding-left
+// every 4th card (starting with 4) needs padding-right
+// all other cards need equal padding on left and right
+.lg-card-container {
+  > [fxFlex] {
+    padding-bottom: 16px !important;
+  }
+  > [fxFlex]:nth-child(-n + 4) {
+    padding-top: 16px !important;
+  }
+  > [fxFlex]:nth-child(4n + 1) {
+    padding-left: 16px !important;
+    padding-right: 8px !important;
+  }
+  > [fxFlex]:nth-child(4n + 2) {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  > [fxFlex]:nth-child(4n + 3) {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  > [fxFlex]:nth-child(4n + 4) {
+    padding-left: 8px !important;
+    padding-right: 16px !important;
+  }
+}
+
+// 6 cards per row. First 6 cards need padding-top,
+// every 6th card (starting with 1) needs padding-left
+// every 6th card (starting with 6) needs padding-right
+// all other cards need equal padding on left and right
+.xl-card-container {
+  > [fxFlex] {
+    padding-bottom: 24px !important;
+  }
+  > [fxFlex]:nth-child(-n + 6) {
+    padding-top: 24px !important;
+  }
+  > [fxFlex]:nth-child(6n + 1) {
+    padding-left: 24px !important;
+    padding-right: 12px !important;
+  }
+  > [fxFlex]:nth-child(6n + 2) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  > [fxFlex]:nth-child(6n + 3) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  > [fxFlex]:nth-child(6n + 4) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  > [fxFlex]:nth-child(6n + 5) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  > [fxFlex]:nth-child(6n + 6) {
+    padding-left: 12px !important;
+    padding-right: 24px !important;
+  }
+}
