@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  googleAnalyticsID: 'G-5N0Y28ETCP'
 };

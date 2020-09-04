@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 // Material Angular
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -29,6 +30,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsID),
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
