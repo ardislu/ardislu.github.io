@@ -1,4 +1,5 @@
 # ardis.lu
+[![Build Status](https://travis-ci.org/ardislu/ardislu.github.io.svg?branch=main)](https://travis-ci.org/ardislu/ardislu.github.io)
 
 This project contains the Angular codebase for my personal website [ardis.lu](https://ardis.lu).
 
@@ -40,6 +41,13 @@ ng serve
 
 5. Go to the [development server](http://localhost:4200/) in your browser
 
+# Note on Web Server Configuration
+For Angular apps using HTML5 URLs (i.e. URLs that look like separate pages but are actually not), we need to [configure the web server to fallback to index.html](https://angular.io/guide/deployment#server-configuration). Since GitHub Pages doesn't allow web server configurations (as of now), we can simulate the same effect by copying `index.html` to the magic file `404.html`. This step is included in the TravisCI .yml configuration, so no manual intervention is required. 
+
+This trick may cause issues with SEO or website auditors like Lighthouse since all requests to URLs other than the root will result in a `HTTP 404` code. However, the user experience is not affected. 
+
+If you use `ng serve` or `npm run stage` to host a development web server, this step is not necessary since the development web server is appropriately configured. 
+
 # Developer Reference
 
 ## Helpful Global Packages
@@ -48,6 +56,7 @@ These packages might be useful to have outside the local context (see below for 
 npm install -g depcheck
 npm install -g npm-check-updates
 npm install -g local-web-server
+npm install -g lighthouse
 ```
 
 ## Helpful Development Packages
@@ -112,4 +121,9 @@ npm ci
 Run simple web server configured for SPAs (redirects all URLs to index.html) and output dynamic access stats to console
 ```
 ws --spa index.html --log.format stats
+```
+
+Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit on the development server (assuming hosted with the `ws` command above)
+```
+lighthouse http://127.0.0.1:8000/ --view
 ```
