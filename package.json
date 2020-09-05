@@ -35,6 +35,7 @@
     "@angular/platform-browser-dynamic": "^10.1.0",
     "@angular/router": "^10.1.0",
     "@angular/service-worker": "^10.1.0",
+    "fuse.js": "^6.4.1",
     "ngx-google-analytics": "^9.0.1",
     "rxjs": "~6.6.2",
     "tslib": "^2.0.1",

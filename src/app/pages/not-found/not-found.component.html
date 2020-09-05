@@ -1,0 +1,23 @@
+<mat-card class="not-found-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar svgIcon="logo_gray"></mat-icon>
+    <mat-card-title>
+      404
+    </mat-card-title>
+    <mat-card-subtitle>
+      Page not found.
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p *ngIf="path">
+      Did you mean <a [routerLink]="['/' + path]">{{ path }}</a>?
+    </p>
+    <p *ngIf="!path">
+      Use the buttons below to return to safety.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="accent" (click)="goBack()">BACK</button>
+    <button mat-button color="accent" [routerLink]="['/home']">HOME</button>
+  </mat-card-actions>
+</mat-card>

@@ -127,3 +127,9 @@ $ardis-theme: mat-dark-theme(
 );
 
 @include angular-material-theme($ardis-theme);
+
+a {
+  color: mat-color($al-accent);
+  text-decoration: none;
+  font-weight: bold;
+}
