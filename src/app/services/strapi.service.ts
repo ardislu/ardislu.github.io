@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { Adapter } from '../models/adapter.model';
@@ -26,15 +26,21 @@ export class ProjectCardAdapter implements Adapter<ProjectCard> {
   providedIn: 'root'
 })
 export class ProjectCardService {
+  private cache!: Observable<ProjectCard[]>;
 
   constructor(private http: HttpClient, private adapter: ProjectCardAdapter) { }
 
   list(): Observable<ProjectCard[]> {
+    if (this.cache) {
+      return this.cache;
+    }
+
     const url = `${environment.strapiHost}/project-cards`;
-    return this.http.get(url).pipe(
-      // List of items reponse: [{item}]
-      map((itemList: any) => itemList.map((item: any) => this.adapter.adapt(item)))
+    this.cache = this.http.get(url).pipe(
+      shareReplay(1), // Send last response on future subscriptions on this observable
+      map((itemList: any) => itemList.map((item: any) => this.adapter.adapt(item))), // List of items reponse: [{item}]
     );
+    return this.cache;
   }
 }
 
@@ -55,14 +61,20 @@ export class AboutCardAdapter implements Adapter<AboutCard> {
   providedIn: 'root'
 })
 export class AboutCardService {
+  private cache!: Observable<AboutCard>;
 
   constructor(private http: HttpClient, private adapter: AboutCardAdapter) { }
 
   list(): Observable<AboutCard> {
+    if (this.cache) {
+      return this.cache;
+    }
+
     const url = `${environment.strapiHost}/about`;
-    return this.http.get(url).pipe(
-      // Singleton response: {item}
-      map((item: any) => this.adapter.adapt(item))
+    this.cache = this.http.get(url).pipe(
+      shareReplay(1), // Send last response on future subscriptions on this observable
+      map((item: any) => this.adapter.adapt(item)) // Singleton response: {item}
     );
+    return this.cache;
   }
 }
