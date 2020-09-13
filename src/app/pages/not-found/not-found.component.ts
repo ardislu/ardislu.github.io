@@ -17,7 +17,7 @@ export class NotFoundComponent implements OnInit {
     const currentPath = window.location.pathname;
     const allPaths = this.router.config.map(r => r.path);
     const fuse = new Fuse(allPaths); // Fuzzy matcher
-    this.path = fuse.search(currentPath)[0].item ?? '';
+    this.path = fuse.search(currentPath)?.[0]?.item ?? '';
   }
 
   goBack() {
