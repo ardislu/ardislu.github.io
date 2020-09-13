@@ -54,7 +54,7 @@ export class AboutCardAdapter implements Adapter<AboutCard> {
 @Injectable({
   providedIn: 'root'
 })
-export class AboutService {
+export class AboutCardService {
 
   constructor(private http: HttpClient, private adapter: AboutCardAdapter) { }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { AboutCard } from '../../models/about.model';
+import { AboutCardService } from '../../services/strapi.service';
 
 @Component({
   selector: 'app-about',
@@ -7,8 +9,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  public aboutCard!: AboutCard;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private about: AboutCardService) {
+    this.about.list().subscribe((res: AboutCard) => this.aboutCard = res);
+  }
 
   ngOnInit(): void {
   }
