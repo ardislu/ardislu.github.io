@@ -8,12 +8,15 @@
         <mat-card-title>
           <div>{{ project.title }}</div>
         </mat-card-title>
-        <mat-card-content>
+        <mat-card-content fxHide.xs>
           {{ project.description }}
         </mat-card-content>
+        <mat-card-content fxHide fxShow.xs>
+          {{ project.tags.join(', ') }}
+        </mat-card-content>
         <mat-card-actions>
-          <button mat-icon-button [routerLink]="['/' + project.route]">
-            <mat-icon svgIcon="keyboard_arrow_right"></mat-icon>
+          <button mat-button color="accent" [routerLink]="['/' + project.route]">
+            EXPLORE
           </button>
         </mat-card-actions>
       </mat-card>
