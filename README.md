@@ -41,6 +41,22 @@ ng serve
 
 5. Go to the [development server](http://localhost:4200/) in your browser
 
+# Testing on Other Devices
+To connect to the development server from other devices, initiate the development server on all IP addresses on the local machine:
+```
+ng serve --host 0.0.0.0
+```
+
+Then get your local IP address from Powershell:
+```
+ipconfig
+```
+
+Now you can connect to the development server from any device on the local network (e.g. your phone or tablet). For example, if my local IP address is `192.168.1.21`, go to this address from the phone or tablet's internet browser:
+```
+192.168.1.21:4200
+```
+
 # Note on Web Server Configuration
 For Angular apps using HTML5 URLs (i.e. URLs that look like separate pages but are actually not), we need to [configure the web server to fallback to index.html](https://angular.io/guide/deployment#server-configuration). Since GitHub Pages doesn't allow web server configurations (as of now), we can simulate the same effect by copying `index.html` to the magic file `404.html`. This step is included in the TravisCI .yml configuration, so no manual intervention is required. 
 
@@ -67,7 +83,7 @@ source-map-explorer
 ```
 
 ## Helpful npm Scripts
-Build the web app then host them locally using local-web-server. Use to simulate production for e2e testing. 
+Build the web app then host it locally using local-web-server. Use to simulate production for e2e testing. 
 ```
 npm run stage
 ```
