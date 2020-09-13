@@ -1,5 +1,6 @@
 .header {
-  padding: env(safe-area-inset-top); // Fill top status bar for iOS
+  padding-top: env(safe-area-inset-top); // Fill top status bar for iOS
+  height: calc(44px + env(safe-area-inset-top));
   padding-left: 16px;
   padding-right: 16px;
   position: fixed;
@@ -10,7 +11,8 @@
 }
 
 .false-header {
-  padding: env(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  height: calc(44px + env(safe-area-inset-top));
   z-index: 0;
   position: relative;
   background: #303030;
