@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
 
   // Layout defaults
   public containerStyle = {
-    'width': 'calc(100% - 20px)',
+    width: 'calc(100% - 20px)',
     'padding-top': '20px'
-  }
+  };
   // Known Angular bug: the '!important' CSS property will not be applied when using [ngStyle] or [style.xxx]
   // https://github.com/angular/angular/issues/12009
   // Workaround: use a class containing this single style. Remember to update the SCSS classes whenenver the gutters are updated.
@@ -28,19 +28,19 @@ export class HomeComponent implements OnInit {
   // Layout lookup tables
   // Remember to update the SCSS classes whenever the gutters are updated.
   private gutters: { [key: string]: string } = {
-    'xs': '10px',
-    'sm': '15px',
-    'md': '20px',
-    'lg': '24px',
-    'xl': '24px'
-  }
+    xs: '10px',
+    sm: '15px',
+    md: '20px',
+    lg: '24px',
+    xl: '24px'
+  };
   private columns: { [key: string]: number } = {
-    'xs': 1,
-    'sm': 2,
-    'md': 3,
-    'lg': 4,
-    'xl': 5
-  }
+    xs: 1,
+    sm: 2,
+    md: 3,
+    lg: 4,
+    xl: 5
+  };
 
   constructor(private project: ProjectCardService, private media: MediaObserver) {
     this.project.list().subscribe((res: ProjectCard[]) => this.projectCards = res);
@@ -59,9 +59,9 @@ export class HomeComponent implements OnInit {
     const gap = this.gutters[breakpoint];
 
     this.containerStyle = {
-      'width': `calc(100% - ${gap})`,
+      width: `calc(100% - ${gap})`,
       'padding-top': gap
-    }
+    };
     this.containerMarginClass = `container-margin-${breakpoint}`; // MUST be a class. Can't merge with containerStyle.
     this.layoutGap = `${gap} grid`;
     this.columnPercent = `${(1 / this.columns[breakpoint] * 100).toFixed(3)}%`;
