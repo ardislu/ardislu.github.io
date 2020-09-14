@@ -3,6 +3,9 @@ import { filter, map } from 'rxjs/operators';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { ProjectCard } from '../../models/project.model';
 import { ProjectCardService } from '../../services/strapi.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDialogComponent, NotificationDialogData } from '../../components/notification-dialog/notification-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -42,7 +45,7 @@ export class HomeComponent implements OnInit {
     xl: 5
   };
 
-  constructor(private project: ProjectCardService, private media: MediaObserver) {
+  constructor(private project: ProjectCardService, private media: MediaObserver, private router: Router, private dialog: MatDialog) {
     this.project.list().subscribe((res: ProjectCard[]) => this.projectCards = res);
 
     this.media.asObservable()
@@ -65,6 +68,21 @@ export class HomeComponent implements OnInit {
     this.containerMarginClass = `container-margin-${breakpoint}`; // MUST be a class. Can't merge with containerStyle.
     this.layoutGap = `${gap} grid`;
     this.columnPercent = `${(1 / this.columns[breakpoint] * 100).toFixed(3)}%`;
+  }
+
+  openProject(project: string): void {
+    if (project === 'placeholder') {
+      const data: NotificationDialogData = {
+        title: 'Project unavailable... for now.',
+        body: 'This project isn\'t available right now, sorry!',
+        buttonText: 'OK'
+      };
+      this.dialog.open(NotificationDialogComponent, {data});
+      return;
+    }
+    else {
+      this.router.navigate([`/${project}`]);
+    }
   }
 
 }

@@ -15,7 +15,7 @@
           {{ project.tags.join(', ') }}
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button color="accent" [routerLink]="['/' + project.route]">
+          <button mat-button color="accent" (click)="openProject(project.route)">
             EXPLORE
           </button>
         </mat-card-actions>

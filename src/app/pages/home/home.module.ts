@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { NotificationDialogModule } from '../../components/notification-dialog/notification-dialog.module';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -17,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    NotificationDialogModule,
     NgxSkeletonLoaderModule,
     FlexLayoutModule,
     LayoutModule,
