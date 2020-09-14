@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
         body: 'This project isn\'t available right now, sorry!',
         buttonText: 'OK'
       };
-      this.dialog.open(NotificationDialogComponent, {data});
+      this.dialog.open(NotificationDialogComponent, { data });
       return;
     }
     else {
