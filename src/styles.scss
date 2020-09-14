@@ -1,13 +1,39 @@
-/* Custom theme */
+@import "~@angular/material/theming";
+
+/* Use system font stack */
+$system-typography: mat-typography-config(
+  $font-family:
+    '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+);
+
+// Include only once per project
+@include mat-core($system-typography);
+
+/* Custom themes */
 @import "ardis-theme.scss";
 
-/* Global styling */
+.al-dark {
+  @include angular-material-theme($ardis-dark-theme);
+}
+
+.al-light {
+  @include angular-material-theme($ardis-light-theme);
+}
+
+/* Global element styling */
 body {
   margin: 0px;
 }
 
+a {
+  color: mat-color($al-accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Global utility classes */
+// This fills the remaining space, by using flexbox.
+// Every toolbar row uses a flexbox row layout.
 .fill-space {
-  // This fills the remaining space, by using flexbox.
-  // Every toolbar row uses a flexbox row layout.
   flex: 1 1 auto;
 }

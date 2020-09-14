@@ -1,13 +1,4 @@
-/* Custom theme */
 @import "~@angular/material/theming";
-
-/* Use system font stack */
-$system-typography: mat-typography-config(
-  $font-family:
-    '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-);
-
-@include mat-core($system-typography); // Include only once per project
 
 // Primary color palette, original color #558dd1
 $al-blue: (
@@ -116,7 +107,7 @@ $al-primary: mat-palette($al-blue);
 $al-accent: mat-palette($al-teal);
 $al-warn: mat-palette($al-yellow);
 
-$ardis-theme: mat-dark-theme(
+$ardis-dark-theme: mat-dark-theme(
   (
     color: (
       primary: $al-primary,
@@ -126,10 +117,12 @@ $ardis-theme: mat-dark-theme(
   )
 );
 
-@include angular-material-theme($ardis-theme);
-
-a {
-  color: mat-color($al-accent);
-  text-decoration: none;
-  font-weight: bold;
-}
+$ardis-light-theme: mat-light-theme(
+  (
+    color: (
+      primary: $al-primary,
+      accent: $al-accent,
+      warn: $al-warn,
+    ),
+  )
+);
