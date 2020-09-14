@@ -12,12 +12,10 @@ $system-typography: mat-typography-config(
 /* Custom themes */
 @import "ardis-theme.scss";
 
-.al-dark {
-  @include angular-material-theme($ardis-dark-theme);
-}
+@include angular-material-theme($ardis-dark-theme);
 
 .al-light {
-  @include angular-material-theme($ardis-light-theme);
+  @include angular-material-color($ardis-light-theme);
 }
 
 /* Global element styling */
