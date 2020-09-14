@@ -77,5 +77,6 @@ export class RandomImageComponent implements OnInit, OnChanges {
       return (t >>> 0) / 4294967296;
     };
   }
+  /* tslint:enable:no-bitwise */
 
 }
