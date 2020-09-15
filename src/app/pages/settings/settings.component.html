@@ -1,0 +1,40 @@
+<!-- Fetch user profile from Auth0 -->
+<ng-container *ngIf="auth.userProfile$ | async as profile; else loading">
+  <mat-card class="settings-card">
+    <mat-card-header>
+      <img mat-card-image mat-card-avatar [src]="profile.picture">
+      <mat-card-title>
+        {{ profile.name }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        User Settings
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        More settings to come...
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="accent" [routerLink]="['/home']">HOME</button>
+      <button mat-button color="warn" (click)="auth.logout()">
+        LOG OUT
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<!-- Placeholder loading bars -->
+<ng-template #loading>
+  <mat-card class="settings-card">
+    <mat-card-header>
+      <mat-card-title>
+        <ngx-skeleton-loader animation="pulse" [theme]="{'background-color': '#303030'}"></ngx-skeleton-loader>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ngx-skeleton-loader [count]="5" animation="pulse" [theme]="{'background-color': '#303030'}">
+      </ngx-skeleton-loader>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
