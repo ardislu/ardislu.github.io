@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderModule } from './components/header/header.module';
 
 // Common (only import once)
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,11 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
-
-// Material Angular
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 // Progressive web app
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -27,14 +23,12 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
+    HeaderModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsID),
     AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
@@ -46,6 +40,7 @@ export class AppModule {
     iconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/logo.svg'));
     iconRegistry.addSvgIcon('logo_gray', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/logo_gray.svg'));
     iconRegistry.addSvgIcon('login', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/login.svg'));
+    iconRegistry.addSvgIcon('settings', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/settings.svg'));
     iconRegistry.addSvgIcon('info', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/info.svg'));
     iconRegistry.addSvgIcon('text_snippet', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/text_snippet.svg'));
     iconRegistry.addSvgIcon('email', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/email.svg'));
