@@ -1,5 +1,5 @@
 <!-- Fetch About info from CMS -->
-<ng-container *ngIf="aboutCard; else loading">
+<ng-container *ngIf="aboutCard$ | async as aboutCard; else loading">
   <mat-card class="about-card">
     <mat-card-header>
       <mat-icon mat-card-avatar svgIcon="logo_gray"></mat-icon>

@@ -2,7 +2,7 @@
   [fxLayoutGap]="layoutGap">
 
   <!-- Project cards fetched from API  -->
-  <ng-container *ngIf="projectCards; else loading">
+  <ng-container *ngIf="projectCards$ | async as projectCards; else loading">
     <div *ngFor="let project of projectCards" [fxFlex]="columnPercent">
       <mat-card>
         <mat-card-title>

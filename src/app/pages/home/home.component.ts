@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { filter, map } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { ProjectCard } from '../../models/project.model';
 import { ProjectCardService } from '../../services/strapi.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationDialogComponent, NotificationDialogData } from '../../components/notification-dialog/notification-dialog.component';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  public projectCards!: ProjectCard[];
+export class HomeComponent implements OnInit, OnDestroy {
+  private readonly destroy$ = new Subject();
+  public projectCards$!: Observable<ProjectCard[]>;
   public placeholderCards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   // Layout defaults
@@ -46,16 +48,22 @@ export class HomeComponent implements OnInit {
   };
 
   constructor(private project: ProjectCardService, private media: MediaObserver, private router: Router, private dialog: MatDialog) {
-    this.project.list().subscribe((res: ProjectCard[]) => this.projectCards = res);
+  }
+
+  ngOnInit(): void {
+    this.projectCards$ = this.project.list();
 
     this.media.asObservable()
       .pipe(
         filter((changes: MediaChange[]) => changes.length > 0),
-        map((changes: MediaChange[]) => changes[0])
+        map((changes: MediaChange[]) => changes[0]),
+        takeUntil(this.destroy$)
       ).subscribe((change: MediaChange) => this.configLayout(change.mqAlias));
   }
 
-  ngOnInit(): void {
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   configLayout(breakpoint: string): void {

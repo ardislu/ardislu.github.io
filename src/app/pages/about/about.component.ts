@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { AboutCard } from '../../models/about.model';
 import { AboutCardService } from '../../services/strapi.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-about',
@@ -9,13 +10,13 @@ import { AboutCardService } from '../../services/strapi.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  public aboutCard!: AboutCard;
+  public aboutCard$!: Observable<AboutCard>;
 
   constructor(private location: Location, private about: AboutCardService) {
-    this.about.list().subscribe((res: AboutCard) => this.aboutCard = res);
   }
 
   ngOnInit(): void {
+    this.aboutCard$ = this.about.list();
   }
 
   goBack() {
