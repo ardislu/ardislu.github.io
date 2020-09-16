@@ -38,7 +38,6 @@ export class AppModule {
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/logo.svg'));
-    iconRegistry.addSvgIcon('logo_gray', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/logo_gray.svg'));
     iconRegistry.addSvgIcon('login', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/login.svg'));
     iconRegistry.addSvgIcon('settings', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/settings.svg'));
     iconRegistry.addSvgIcon('info', sanitizer.bypassSecurityTrustResourceUrl('../assets/images/info.svg'));
