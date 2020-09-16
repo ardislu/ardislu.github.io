@@ -1,5 +1,6 @@
 # ardis.lu
-[![Build Status](https://travis-ci.org/ardislu/ardislu.github.io.svg?branch=main)](https://travis-ci.org/ardislu/ardislu.github.io)
+[![Build Status](https://travis-ci.com/ardislu/ardislu.github.io.svg?branch=develop)](https://travis-ci.com/ardislu/ardislu.github.io)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e036880db60c5df107c7/maintainability)](https://codeclimate.com/github/ardislu/ardislu.github.io/maintainability)
 
 This project contains the Angular codebase for my personal website [ardis.lu](https://ardis.lu).
 
@@ -73,6 +74,7 @@ npm install -g depcheck
 npm install -g npm-check-updates
 npm install -g local-web-server
 npm install -g lighthouse
+npm install -g svgo
 ```
 
 ## Helpful Development Packages
@@ -142,4 +144,9 @@ ws --spa index.html --log.format stats
 Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse) audit on the development server (assuming hosted with the `ws` command above)
 ```
 lighthouse http://127.0.0.1:8000/ --view
+```
+
+Minify a .svg file
+```
+svgo example.svg
 ```
