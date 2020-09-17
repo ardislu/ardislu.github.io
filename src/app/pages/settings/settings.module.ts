@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
+import { DialogModule } from '../../components/dialog/dialog.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { SettingsRoutingModule } from './settings-routing.module';
@@ -20,6 +21,7 @@ import { SettingsComponent } from './settings.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    DialogModule,
     NgxSkeletonLoaderModule,
     SettingsRoutingModule
   ]

@@ -17,9 +17,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button color="accent" [routerLink]="['/home']">HOME</button>
-      <button mat-button color="warn" (click)="auth.logout()">
-        LOG OUT
-      </button>
+      <button mat-button color="warn" (click)="logout()">LOG OUT</button>
     </mat-card-actions>
   </mat-card>
 </ng-container>
