@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1600239841233,
+  "timestamp": 1600323089590,
   "index": "https://ardis.lu/index.html",
   "assetGroups": [
     {
@@ -11,19 +11,20 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://ardis.lu/10.15ad41db59b66dc1516e.js",
-        "https://ardis.lu/2.7a0633e1528eb47cf588.js",
-        "https://ardis.lu/6.4f90da1027b2af453be9.js",
-        "https://ardis.lu/7.0e3adc54bd746c3b42f2.js",
+        "https://ardis.lu/1.497d064edeb11a61d813.js",
+        "https://ardis.lu/10.e84d39e9178fb09aa952.js",
+        "https://ardis.lu/11.9ee4776091c5cb40aa05.js",
+        "https://ardis.lu/3.9c39c0d7813bfac8aa86.js",
+        "https://ardis.lu/7.3f01364f2603a42244b6.js",
         "https://ardis.lu/8.ce52910e2a2c47845bc1.js",
-        "https://ardis.lu/9.2fb590a9f04a88bff797.js",
-        "https://ardis.lu/common.55b607e2d9b5ee9b49ad.js",
+        "https://ardis.lu/9.1b0abadbf2f60549217f.js",
+        "https://ardis.lu/common.73bcd6ce4e4a13fa1241.js",
         "https://ardis.lu/favicon.ico",
         "https://ardis.lu/index.html",
-        "https://ardis.lu/main.6057a04858ef605c4fe1.js",
+        "https://ardis.lu/main.7c5312c061c46df389b9.js",
         "https://ardis.lu/manifest.webmanifest",
-        "https://ardis.lu/polyfills.ae94e0ee43f071372ca4.js",
-        "https://ardis.lu/runtime.a3547290fded04e16787.js",
+        "https://ardis.lu/polyfills.ca5f67e3cbc879fc08d5.js",
+        "https://ardis.lu/runtime.6b1b2585955710f94053.js",
         "https://ardis.lu/styles.61b8e8d3de2141f9ee50.css"
       ],
       "patterns": []
@@ -169,12 +170,13 @@
     }
   ],
   "hashTable": {
-    "https://ardis.lu/10.15ad41db59b66dc1516e.js": "451c818aae687aedcd9812dcf8ee48955f18358b",
-    "https://ardis.lu/2.7a0633e1528eb47cf588.js": "5f2d475fba959b70dff9748e849eec7531112ebb",
-    "https://ardis.lu/6.4f90da1027b2af453be9.js": "5fea04c24836eedcc4d5131b4ee65ffa331c938a",
-    "https://ardis.lu/7.0e3adc54bd746c3b42f2.js": "55923b99c24c42a125ec8dfa56f042f9056c4ce5",
+    "https://ardis.lu/1.497d064edeb11a61d813.js": "4dcae056b73798cdec94a53650b964d792a30f7a",
+    "https://ardis.lu/10.e84d39e9178fb09aa952.js": "451c818aae687aedcd9812dcf8ee48955f18358b",
+    "https://ardis.lu/11.9ee4776091c5cb40aa05.js": "120958242fdee2bb4c0ed61c0ac3d783ee948e8a",
+    "https://ardis.lu/3.9c39c0d7813bfac8aa86.js": "f30954d5501a9ddfe2dc952da488ef6417c193af",
+    "https://ardis.lu/7.3f01364f2603a42244b6.js": "0fd88039eba93024057c28bf6d22b06f37387a3b",
     "https://ardis.lu/8.ce52910e2a2c47845bc1.js": "1944ce9c247193b9381f55501264f61ac2d3a581",
-    "https://ardis.lu/9.2fb590a9f04a88bff797.js": "0a033bc4ff5d5d26e848f3e9d540f2aca4b90f8d",
+    "https://ardis.lu/9.1b0abadbf2f60549217f.js": "80193a6caf1c39dd7d0d0618aea9e195fe285c77",
     "https://ardis.lu/assets/icons/android/android-launchericon-144-144.png": "1cb0d0c9fddcb32199d3e14eaed7c40a1fa74a75",
     "https://ardis.lu/assets/icons/android/android-launchericon-192-192.png": "eeb95a0ffd7fa2c5e5ef8ffb9490efbf725940b5",
     "https://ardis.lu/assets/icons/android/android-launchericon-48-48.png": "cd793c11a480fbe94c9a6846e2144157f3f2cef0",
@@ -287,13 +289,13 @@
     "https://ardis.lu/assets/images/logo.svg": "a03cd6d228447a81424fcbfb2f875bd3038b4484",
     "https://ardis.lu/assets/images/settings.svg": "481f705786a92ea68ca2f12c144823c79f1cd89c",
     "https://ardis.lu/assets/images/text_snippet.svg": "9e77bbb8f15c59790aaa47687cc8b9fe06ac4fb0",
-    "https://ardis.lu/common.55b607e2d9b5ee9b49ad.js": "6d73e0a452dda2b647ffa138ac0fc9630d8b9e00",
+    "https://ardis.lu/common.73bcd6ce4e4a13fa1241.js": "a4aa598a8577557d83a47c9983fee3a6a3d5c5f5",
     "https://ardis.lu/favicon.ico": "845a5d06650bfe7a82eb61bba73842bf72f8c3a7",
-    "https://ardis.lu/index.html": "19cb0a2c61a327311faed200d74f7df626dac9b7",
-    "https://ardis.lu/main.6057a04858ef605c4fe1.js": "9a2ec31925fd713fd38d97315fcfdfd70a83cd10",
+    "https://ardis.lu/index.html": "d1a9c0c53a99821b2f02d2a767709ac84f5900d6",
+    "https://ardis.lu/main.7c5312c061c46df389b9.js": "e0ff06b450a50633e6b161e801d90d224778be74",
     "https://ardis.lu/manifest.webmanifest": "7e36aad18ba76dc1f37efe2396f01adb71a34b35",
-    "https://ardis.lu/polyfills.ae94e0ee43f071372ca4.js": "7a75f4d932001c34042b02c1802d66d8ef2af0b8",
-    "https://ardis.lu/runtime.a3547290fded04e16787.js": "611c38d01c7934025f5a73e4cea68754cb23f533",
+    "https://ardis.lu/polyfills.ca5f67e3cbc879fc08d5.js": "3ac17dbd99a7e9c58e4d2c64316e17a7d5d5896a",
+    "https://ardis.lu/runtime.6b1b2585955710f94053.js": "35efcabac2a8e2e8314fd9a55aa681d58673dd30",
     "https://ardis.lu/styles.61b8e8d3de2141f9ee50.css": "5a9e042ccf7fbfba18629fc5a6329f953f46f341"
   },
   "navigationUrls": [
