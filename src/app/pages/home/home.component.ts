@@ -5,7 +5,7 @@ import { ProjectCard } from '../../models/project.model';
 import { ProjectCardService } from '../../services/strapi.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { NotificationDialogComponent, NotificationDialogData } from '../../components/notification-dialog/notification-dialog.component';
+import { NotificationDialogComponent, NotificationDialogData } from '../../components/dialog/notification/notification-dialog.component';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
