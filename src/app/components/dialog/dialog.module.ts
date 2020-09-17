@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
-import { NotificationDialogComponent } from './notification-dialog.component';
+import { ConfirmationDialogComponent } from './confirmation/confirmation-dialog.component';
+import { NotificationDialogComponent } from './notification/notification-dialog.component';
 
 @NgModule({
   declarations: [
+    ConfirmationDialogComponent,
     NotificationDialogComponent
   ],
   imports: [
@@ -16,7 +18,8 @@ import { NotificationDialogComponent } from './notification-dialog.component';
     MatButtonModule
   ],
   exports: [
+    ConfirmationDialogComponent,
     NotificationDialogComponent
   ]
 })
-export class NotificationDialogModule { }
+export class DialogModule { }
