@@ -3,7 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface ConfirmationDialogData {
-  title: string;
+  title?: string;
   body: string;
   confirmButtonText: string;
   rejectButtonText: string;

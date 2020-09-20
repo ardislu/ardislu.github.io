@@ -3,7 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface NotificationDialogData {
-  title: string;
+  title?: string;
   body: string;
   buttonText: string;
 }
