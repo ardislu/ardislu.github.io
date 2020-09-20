@@ -20,8 +20,8 @@ export class SettingsComponent implements OnInit {
     const data: ConfirmationDialogData = {
       title: 'Logout?',
       body: 'Are you sure you want to logout?',
-      confirmButtonText: 'Yes',
-      rejectButtonText: 'No'
+      confirmButtonText: 'LOGOUT',
+      rejectButtonText: 'CANCEL'
     };
     const confirmationDialog = this.dialog.open(ConfirmationDialogComponent, { data });
     confirmationDialog.afterClosed().subscribe((confirmed: boolean) => { if (confirmed) { this.auth.logout(); } });
