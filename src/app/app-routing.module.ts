@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'settings', loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsModule), canActivate: [AuthGuard] },
   { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
   { path: 'image-generator', loadChildren: () => import('./pages/image-generator/image-generator.module').then(m => m.ImageGeneratorModule) },
+  { path: 'bfi', loadChildren: () => import('./pages/bfi/bfi.module').then(m => m.BfiModule) },
   { path: '**', pathMatch: 'full', loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule) }
 ];
 /* tslint:enable:max-line-length */
