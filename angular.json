@@ -127,7 +127,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "e2e/playwright.config.js",
             "devServerTarget": "ardis-lu-frontend:serve"
           },
           "configurations": {
