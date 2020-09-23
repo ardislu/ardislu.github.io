@@ -15,14 +15,14 @@ describe('NotFoundComponent', () => {
       MatIconTestingModule
     ],
     declareComponent: false
-  })
+  });
 
   beforeEach(() => {
     spectator = createComponent();
-  })
+  });
 
   it('should provide an error message', () => {
     expect(spectator.query('mat-card-content')).toHaveText('Use the buttons below to return to safety.');
-  })
+  });
 
-})
+});
