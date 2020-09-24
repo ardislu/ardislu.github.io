@@ -14,6 +14,11 @@ describe('Home Page', () => {
     expect(await page.title()).toBe('ardis.lu');
   });
 
+  it('should show cards', async () => {
+    await page.goto('http://localhost:4200');
+    expect(await page.content()).toContain('mat-card');
+  });
+
   afterAll(async () => {
     await browser.close();
   });
