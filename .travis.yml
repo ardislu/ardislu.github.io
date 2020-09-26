@@ -13,9 +13,8 @@ language: node_js
 node_js:
   - node # Latest stable release
 
-cache:
-  directories:
-     - "$HOME/.npm"
+env:
+  - PLAYWRIGHT_BROWSERS_PATH=0 # Install Playwright browser binaries in node_modules
 
 install:
   - npm ci
