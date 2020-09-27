@@ -1,0 +1,9 @@
+.snek-card {
+  width: min(100%, 500px);
+  margin: min(10%, 1em) auto;
+  white-space: pre-wrap;
+
+  .canvas-container {
+    text-align: center;
+  }
+}

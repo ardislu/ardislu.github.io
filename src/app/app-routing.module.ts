@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
   { path: 'image-generator', loadChildren: () => import('./pages/image-generator/image-generator.module').then(m => m.ImageGeneratorModule) },
   { path: 'bfi', loadChildren: () => import('./pages/bfi/bfi.module').then(m => m.BfiModule) },
+  { path: 'snek', loadChildren: () => import('./pages/snek/snek.module').then(m => m.SnekModule) },
   { path: '**', pathMatch: 'full', loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule) }
 ];
 /* tslint:enable:max-line-length */
