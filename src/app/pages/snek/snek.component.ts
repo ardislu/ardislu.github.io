@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SnakeGameComponent } from 'src/app/components/snake-game/snake-game.component';
 
 @Component({
@@ -9,17 +9,33 @@ import { SnakeGameComponent } from 'src/app/components/snake-game/snake-game.com
 export class SnekComponent implements OnInit {
   @ViewChild('game', { static: true }) game!: SnakeGameComponent;
 
-  public gameGrid = 10;
-  public gameWidth = 25;
-  public gameHeight = 25;
+  private minGrids = 10; // At least this many squares in any direction
+  private actualWidth = 500;
+  private actualHeight = 500;
+
+  public gameGrid = this.actualWidth / this.minGrids;
+  public gameWidth = this.actualWidth / this.gameGrid;
+  public gameHeight = this.actualHeight / this.gameGrid;
   public gameScore = 0;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.actualWidth = Math.min(window.innerWidth * 0.75, 1080);
+    this.actualHeight = Math.min(window.innerHeight * 0.4, 1080);
+
+    this.gameGrid = Math.floor(Math.min(this.actualWidth, this.actualHeight) / this.minGrids);
+
+    this.actualWidth -= this.actualWidth % this.gameGrid;
+    this.actualHeight -= this.actualHeight % this.gameGrid;
+
+    this.gameWidth = this.actualWidth / this.gameGrid;
+    this.gameHeight = this.actualHeight / this.gameGrid;
+    this.gameScore = 0;
+  }
 
   restart(): void {
-    this.gameScore = 0;
+    this.ngOnInit();
     this.game.ngOnInit();
   }
 

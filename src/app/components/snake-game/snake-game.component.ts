@@ -11,6 +11,8 @@ export class SnakeGameComponent implements OnInit {
   @Input() gridSize = 10;
   @Input() width = 25;
   @Input() height = 25;
+  @Input() playerColor = '#558dd1';
+  @Input() foodColor = '#e7d26a';
   @Output() gameEnded = new EventEmitter<number>();
 
   @ViewChild('canvas', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
@@ -19,6 +21,7 @@ export class SnakeGameComponent implements OnInit {
   private player!: SnekPlayer;
   private food!: SnekPiece;
   private gameLoop!: number;
+  private gameOverTimer!: number;
 
   constructor() { }
 
@@ -29,8 +32,8 @@ export class SnakeGameComponent implements OnInit {
 
     // Initialize player
     const spawnPiece: SnekPiece = {
-      x: Math.floor(this.width * Math.random()),
-      y: Math.floor(this.height * Math.random())
+      x: Math.floor(this.width / 2),
+      y: Math.floor(this.height / 2)
     };
     this.player = new SnekPlayer(spawnPiece);
 
@@ -53,14 +56,27 @@ export class SnakeGameComponent implements OnInit {
       y: player.head.y + player.yDirection
     };
 
-    // Check for game over
-    const gameLost = (player.body.some(p => p.x === newHead.x && p.y === newHead.y)
-      || newHead.x - 1 < 0
-      || newHead.x + 2 > this.width
-      || newHead.y - 1 < 0
-      || newHead.y + 2 > this.height);
-    if (gameLost) {
+    // newHead has the same position as a body piece
+    if (player.body.some(p => p.x === newHead.x && p.y === newHead.y)) {
       this.endGame();
+      return player;
+    }
+
+    // newHead went beyond a wall
+    const pastWall = newHead.x < 0
+      || newHead.x + 1 > this.width
+      || newHead.y < 0
+      || newHead.y + 1 > this.height;
+    if (pastWall) {
+      this.gameOverTimer += 1; 
+      if (this.gameOverTimer > 5) {
+        this.endGame();
+        return player; // Do not add newHead
+      }
+      return player;
+    }
+    else {
+      this.gameOverTimer = 0;
     }
 
     // Extend head by one
@@ -104,11 +120,13 @@ export class SnakeGameComponent implements OnInit {
       const x = bodyPiece.x * g;
       const y = bodyPiece.y * g;
       this.ctx.beginPath();
+      this.ctx.fillStyle = this.playerColor;
       this.ctx.fillRect(x, y, g, g);
     }
 
     const foodX = this.food.x * g;
     const foodY = this.food.y * g;
+    this.ctx.fillStyle = this.foodColor;
     this.ctx.fillRect(foodX, foodY, g, g);
   }
 
@@ -122,15 +140,19 @@ export class SnakeGameComponent implements OnInit {
     let xInput = 0;
     let yInput = 0;
     switch (event.key) {
+      case 'd':
       case 'ArrowRight':
         xInput = 1;
         break;
+      case 'a':
       case 'ArrowLeft':
         xInput = -1;
         break;
+      case 'w':
       case 'ArrowUp':
         yInput = -1;
         break;
+      case 's':
       case 'ArrowDown':
         yInput = 1;
         break;

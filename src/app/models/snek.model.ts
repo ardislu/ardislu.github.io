@@ -17,16 +17,4 @@ export class SnekPlayer {
   get head(): SnekPiece {
     return this.body[0];
   }
-
-  get allX(): number[] {
-    return this.body.map(p => p.x);
-  }
-
-  get allY(): number[] {
-    return this.body.map(p => p.y);
-  }
-
-  get allCoords(): Array<[number, number]> {
-    return this.body.map(p => [p.x, p.y]);
-  }
 }
