@@ -23,6 +23,7 @@ $system-typography: mat-typography-config(
 /* Global element styling */
 body {
   margin: 0px;
+  touch-action: manipulation; // Disable double-tap to zoom
 }
 
 a {
