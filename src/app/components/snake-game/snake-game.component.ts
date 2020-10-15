@@ -96,7 +96,7 @@ export class SnakeGameComponent implements OnInit {
       x: Math.floor(this.width * Math.random()),
       y: Math.floor(this.height * Math.random())
     };
-    while (this.player.body.includes(newFood)) {
+    while (this.player.body.some(p => p.x === newFood.x && p.y === newFood.y)) {
       newFood = {
         x: Math.floor(this.width * Math.random()),
         y: Math.floor(this.height * Math.random())
@@ -136,7 +136,7 @@ export class SnakeGameComponent implements OnInit {
   }
 
   @HostListener('window:keydown', ['$event'])
-  keyEvent(event: KeyboardEvent) {
+  keyEvent(event: KeyboardEvent): void {
     let xInput = 0;
     let yInput = 0;
     switch (event.key) {
@@ -160,13 +160,40 @@ export class SnakeGameComponent implements OnInit {
         xInput = 0;
         yInput = 0;
     }
+    this.changeDirection(xInput, yInput);
+  }
+
+  onPan(event: any): void {
+    let xInput = 0;
+    let yInput = 0;
+    switch (event.additionalEvent) {
+      case 'panright':
+        xInput = 1;
+        break;
+      case 'panleft':
+        xInput = -1;
+        break;
+      case 'panup':
+        yInput = -1;
+        break;
+      case 'pandown':
+        yInput = 1;
+        break;
+      default:
+        xInput = 0;
+        yInput = 0;
+    }
+    this.changeDirection(xInput, yInput);
+  }
+
+  changeDirection(xChange: number, yChange: number): void {
     // Only perpendicular inputs are valid
-    if (this.player.xDirection === 0 && xInput) {
-      this.player.xDirection += xInput;
+    if (this.player.xDirection === 0 && xChange) {
+      this.player.xDirection += xChange;
       this.player.yDirection = 0;
     }
-    else if (this.player.yDirection === 0 && yInput) {
-      this.player.yDirection += yInput;
+    else if (this.player.yDirection === 0 && yChange) {
+      this.player.yDirection += yChange;
       this.player.xDirection = 0;
     }
   }
