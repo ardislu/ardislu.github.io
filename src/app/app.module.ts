@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
 
 // Common (only import once)
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
@@ -25,6 +25,7 @@ import { environment } from '../environments/environment';
   imports: [
     HeaderModule,
     BrowserModule,
+    HammerModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsID),
