@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { SnakeGameComponent } from 'src/app/components/snake-game/snake-game.component';
 
 @Component({
@@ -16,13 +16,14 @@ export class SnekComponent implements OnInit {
   public gameGrid = this.actualWidth / this.minGrids;
   public gameWidth = this.actualWidth / this.gameGrid;
   public gameHeight = this.actualHeight / this.gameGrid;
-  public gameScore = 0;
+  public lastScore = 0;
+  public highScore = 0;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.actualWidth = Math.min(window.innerWidth * 0.75, 1080);
-    this.actualHeight = Math.min(window.innerHeight * 0.4, 1080);
+    this.actualWidth = Math.min(window.innerWidth * 0.7, 1080);
+    this.actualHeight = Math.min(window.innerHeight * 0.35, 1080);
 
     this.gameGrid = Math.floor(Math.min(this.actualWidth, this.actualHeight) / this.minGrids);
 
@@ -31,12 +32,29 @@ export class SnekComponent implements OnInit {
 
     this.gameWidth = this.actualWidth / this.gameGrid;
     this.gameHeight = this.actualHeight / this.gameGrid;
-    this.gameScore = 0;
   }
 
   restart(): void {
     this.ngOnInit();
     this.game.ngOnInit();
+  }
+
+  recordScore(score: number): void {
+    this.lastScore = score;
+    this.highScore = Math.max(this.highScore, this.lastScore);
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    switch (event.key) {
+      case ' ':
+      case 'Spacebar':
+        this.game.endGame();
+        this.restart();
+        break;
+      default:
+        break;
+    }
   }
 
 }

@@ -3,16 +3,12 @@
     snek
   </mat-card-title>
   <mat-card-subtitle>
-    this is snek
+    this is snek // high: {{ highScore }} // last: {{ lastScore }}
   </mat-card-subtitle>
 
   <mat-card-content class="canvas-container">
     <app-snake-game #game [gridSize]="gameGrid" [width]="gameWidth" [height]="gameHeight"
-      (gameEnded)="gameScore = $event"></app-snake-game>
-  </mat-card-content>
-
-  <mat-card-content *ngIf="gameScore">
-    score: {{ gameScore }}
+      (gameEnded)="recordScore($event)"></app-snake-game>
   </mat-card-content>
 
   <mat-card-actions>
