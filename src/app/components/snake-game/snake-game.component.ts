@@ -41,7 +41,7 @@ export class SnakeGameComponent implements OnInit {
     this.spawnFood();
 
     // Begin game loop
-    this.gameLoop = setInterval(this.tick.bind(this), 100);
+    this.gameLoop = window.setInterval(this.tick.bind(this), 100);
   }
 
   tick(): void {
@@ -68,7 +68,7 @@ export class SnakeGameComponent implements OnInit {
       || newHead.y < 0
       || newHead.y + 1 > this.height;
     if (pastWall) {
-      this.gameOverTimer += 1; 
+      this.gameOverTimer += 1;
       if (this.gameOverTimer > 5) {
         this.endGame();
         return player; // Do not add newHead
