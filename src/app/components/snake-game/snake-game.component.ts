@@ -135,6 +135,7 @@ export class SnakeGameComponent implements OnInit {
     this.gameEnded.emit(this.player.body.length);
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent): void {
     let xInput = 0;

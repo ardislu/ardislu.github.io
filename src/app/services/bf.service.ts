@@ -4,10 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BfService {
-  private readonly TAPE_SIZE = 1000;
   public script = '';
   public input = '';
   private _output = '';
+
+  private readonly tapeSize = 1000;
 
   constructor() {
   }
@@ -31,7 +32,7 @@ export class BfService {
   executeScript(): void {
     const script = [...this.script]; // Spread string to char array
     const bracketIndices = this.getMatchingBracketsMap(this.script);
-    const tape = new Array(this.TAPE_SIZE).fill(0);
+    const tape = new Array(this.tapeSize).fill(0);
     const output = [];
     let executionPointer = 0;
     let addressPointer = 0;

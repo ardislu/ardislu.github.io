@@ -47,7 +47,7 @@ export class RandomImageComponent implements OnInit, OnChanges {
     }
   }
 
-  /* tslint:disable:no-bitwise */
+  /* eslint-disable */
   // Hasher and pseudo-RNG taken from this post:
   // https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript/47593316#47593316
   xmur3(str: string) {
@@ -77,6 +77,6 @@ export class RandomImageComponent implements OnInit, OnChanges {
       return (t >>> 0) / 4294967296;
     };
   }
-  /* tslint:enable:no-bitwise */
+  /* eslint-enable */
 
 }

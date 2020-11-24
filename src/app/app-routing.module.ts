@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
-/* tslint:disable:max-line-length */
+/* eslint-disable max-len */
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'snek', loadChildren: () => import('./pages/snek/snek.module').then(m => m.SnekModule) },
   { path: '**', pathMatch: 'full', loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule) }
 ];
-/* tslint:enable:max-line-length */
+/* eslint-enable max-len */
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', preloadingStrategy: PreloadAllModules })],

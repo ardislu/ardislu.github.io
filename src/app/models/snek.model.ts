@@ -9,7 +9,12 @@ export class SnekPlayer {
   public yDirection: -1 | 0 | 1;
 
   constructor(initPieces: SnekPiece | SnekPiece[]) {
-    initPieces.constructor === Array ? this.body = initPieces : this.body = [initPieces as SnekPiece];
+    if (initPieces.constructor === Array) {
+      this.body = initPieces;
+    }
+    else {
+      this.body = [initPieces as SnekPiece];
+    }
     this.xDirection = 1;
     this.yDirection = 0;
   }

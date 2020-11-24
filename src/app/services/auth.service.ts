@@ -5,6 +5,8 @@ import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
+/* eslint-disable @typescript-eslint/member-ordering */
+/* eslint-disable @typescript-eslint/naming-convention */
 @Injectable({
   providedIn: 'root'
 })
@@ -95,13 +97,13 @@ export class AuthService {
           // Get and set target redirect route from callback results
           targetRoute = cbRes.appState && cbRes.appState.target ? cbRes.appState.target : '/';
         }),
-        concatMap(() => {
+        concatMap(() =>
           // Redirect callback complete; get user and login status
-          return combineLatest([
+          combineLatest([
             this.getUser$(),
             this.isAuthenticated$
-          ]);
-        })
+          ])
+        )
       );
       // Subscribe to authentication completion observable
       // Response will be an array of user and login status

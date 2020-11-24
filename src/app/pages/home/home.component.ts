@@ -14,7 +14,6 @@ import { Observable, Subject } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  private readonly destroy$ = new Subject();
   public projectCards$!: Observable<ProjectCard[]>;
   public placeholderCards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -46,6 +45,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     lg: 4,
     xl: 5
   };
+
+  // To unsubscribe all other observables on component destruction
+  private readonly destroy$ = new Subject();
 
   constructor(private project: ProjectCardService, private media: MediaObserver, private router: Router, private dialog: MatDialog) {
   }

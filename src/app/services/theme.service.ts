@@ -13,6 +13,7 @@ export class ThemeService {
 
   // Default theme instantiation
   private _selectedTheme: BaseTheme = this.ardisDarkTheme;
+  // eslint-disable-next-line @typescript-eslint/member-ordering -- this variable depends on private variables
   public readonly selectedTheme$: BehaviorSubject<BaseTheme> = new BehaviorSubject(this.ardisDarkTheme);
 
   constructor() {
@@ -41,6 +42,6 @@ export class ThemeService {
       classList.add(theme.colorClass);
     }
     this._selectedTheme = theme;
-  }
+  };
 
 }

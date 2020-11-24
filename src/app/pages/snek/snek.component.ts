@@ -13,11 +13,13 @@ export class SnekComponent implements OnInit {
   private actualWidth = 500;
   private actualHeight = 500;
 
+  /* eslint-disable @typescript-eslint/member-ordering -- these variables depend on the private variables */
   public gameGrid = this.actualWidth / this.minGrids;
   public gameWidth = this.actualWidth / this.gameGrid;
   public gameHeight = this.actualHeight / this.gameGrid;
   public lastScore = 0;
   public highScore = 0;
+  /* eslint-enable @typescript-eslint/member-ordering */
 
   constructor() { }
 
@@ -44,6 +46,7 @@ export class SnekComponent implements OnInit {
     this.highScore = Math.max(this.highScore, this.lastScore);
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
     switch (event.key) {
