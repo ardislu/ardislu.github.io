@@ -16,7 +16,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint && stylelint \"src/**/*.scss\"",
     "e2e": "ng e2e",
     "stage": "ng build --prod && cd dist/ardis-lu-frontend && ws --spa index.html --log.format stats",
     "analyze": "ng build --prod --source-map --vendor-chunk=false && source-map-explorer dist/ardis-lu-frontend/main.*.js"
@@ -78,6 +78,9 @@
     "playwright": "^1.7.1",
     "protractor": "^7.0.0",
     "source-map-explorer": "^2.5.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-scss": "^3.18.0",
     "ts-node": "~9.1.1"
   }
 }
