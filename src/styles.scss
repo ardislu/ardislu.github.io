@@ -2,8 +2,7 @@
 
 /* Use system font stack */
 $system-typography: mat-typography-config(
-  $font-family:
-    '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  $font-family: '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 );
 
 // Include only once per project
@@ -22,7 +21,7 @@ $system-typography: mat-typography-config(
 
 /* Global element styling */
 body {
-  margin: 0px;
+  margin: 0;
   touch-action: manipulation; // Disable double-tap to zoom
 }
 
