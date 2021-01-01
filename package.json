@@ -21,6 +21,11 @@
     "stage": "ng build --prod && cd dist/ardis-lu-frontend && ws --spa index.html --log.format stats",
     "analyze": "ng build --prod --source-map --vendor-chunk=false && source-map-explorer dist/ardis-lu-frontend/main.*.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^11.0.5",
@@ -48,12 +53,24 @@
   "devDependencies": {
     "@angular-builders/jest": "^11.0.0",
     "@angular-devkit/build-angular": "^0.1100.5",
+    "@angular-eslint/builder": "0.8.0-beta.7",
+    "@angular-eslint/eslint-plugin": "0.8.0-beta.7",
+    "@angular-eslint/eslint-plugin-template": "0.8.0-beta.7",
+    "@angular-eslint/schematics": "^0.8.0-beta.7",
+    "@angular-eslint/template-parser": "0.8.0-beta.7",
     "@angular/cli": "^11.0.5",
     "@angular/compiler-cli": "^11.0.5",
     "@ngneat/spectator": "^6.1.2",
     "@schematics/angular": "^11.0.5",
     "@types/jest": "^26.0.19",
     "@types/node": "^14.14.17",
+    "@typescript-eslint/eslint-plugin": "4.11.1",
+    "@typescript-eslint/parser": "4.11.1",
+    "eslint": "^7.16.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.9",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "husky": "^4.3.6",
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.3.2",
     "local-web-server": "^4.2.1",
@@ -61,17 +78,6 @@
     "playwright": "^1.7.1",
     "protractor": "^7.0.0",
     "source-map-explorer": "^2.5.1",
-    "ts-node": "~9.1.1",
-    "eslint": "^7.16.0",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jsdoc": "30.7.9",
-    "eslint-plugin-prefer-arrow": "1.2.2",
-    "@angular-eslint/builder": "0.8.0-beta.7",
-    "@angular-eslint/eslint-plugin": "0.8.0-beta.7",
-    "@angular-eslint/eslint-plugin-template": "0.8.0-beta.7",
-    "@angular-eslint/schematics": "^0.8.0-beta.7",
-    "@angular-eslint/template-parser": "0.8.0-beta.7",
-    "@typescript-eslint/eslint-plugin": "4.11.1",
-    "@typescript-eslint/parser": "4.11.1"
+    "ts-node": "~9.1.1"
   }
 }
