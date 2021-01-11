@@ -65,6 +65,12 @@ This trick may cause issues with SEO or website auditors like Lighthouse since a
 
 If you use `ng serve` or `npm run stage` to host a development web server, this step is not necessary since the development web server is appropriately configured. 
 
+# Pre-commit hook
+This project uses [Husky](https://www.npmjs.com/package/husky) and [lint-staged](https://www.npmjs.com/package/lint-staged) to do `ng lint` (for HTML and TS) or `stylelint` (for SCSS) on staged files before each commit.
+
+# Testing
+This project uses [Jest](https://www.npmjs.com/package/jest) for unit testing (instead of Jasmine + Karma), and [Playwright](https://www.npmjs.com/package/playwright) for e2e testing (instead of Protractor). The Angular architects have been adapted for these frameworks so tests are still run with the usual `npm run test` and `npm run e2e`.
+
 # Developer Reference
 
 ## Helpful Global Packages
@@ -93,6 +99,11 @@ npm run stage
 Build the web app then use source-map-explorer to analyze main.js. Use to identify and reduce bloat.
 ```
 npm run analyze
+```
+
+Lint the entire project with `ng lint` (for Typescript and HTML) and `stylelint` (for SCSS).
+```
+npm run lint
 ```
 
 ## Helpful Assorted Commands
