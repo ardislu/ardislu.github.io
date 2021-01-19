@@ -5,8 +5,8 @@ export interface SnekPiece {
 
 export class SnekPlayer {
   public body: SnekPiece[];
-  public xDirection: -1 | 0 | 1;
-  public yDirection: -1 | 0 | 1;
+  public xDirection: [-1 | 0 | 1];
+  public yDirection: [-1 | 0 | 1];
 
   constructor(initPieces: SnekPiece | SnekPiece[]) {
     if (initPieces.constructor === Array) {
@@ -15,8 +15,8 @@ export class SnekPlayer {
     else {
       this.body = [initPieces as SnekPiece];
     }
-    this.xDirection = 1;
-    this.yDirection = 0;
+    this.xDirection = [1];
+    this.yDirection = [0];
   }
 
   get head(): SnekPiece {

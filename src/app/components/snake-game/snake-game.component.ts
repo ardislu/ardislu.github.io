@@ -50,11 +50,21 @@ export class SnakeGameComponent implements OnInit {
   }
 
   move(player: SnekPlayer): SnekPlayer {
-    // Save old body position and instantiate next movement
-    const newHead: SnekPiece = {
-      x: player.head.x + player.xDirection,
-      y: player.head.y + player.yDirection
-    };
+    let newHead: SnekPiece;
+    // Preserve last movement direction if there's no new player input
+    if (player.xDirection.length === 1) {
+      newHead = {
+        x: player.head.x + player.xDirection[0],
+        y: player.head.y + player.yDirection[0]
+      };
+    }
+    // Use the next queued movement
+    else {
+      newHead = {
+        x: player.head.x + (player.xDirection.shift() ?? 1),
+        y: player.head.y + (player.yDirection.shift() ?? 0)
+      };
+    }
 
     // newHead has the same position as a body piece
     if (player.body.some(p => p.x === newHead.x && p.y === newHead.y)) {
@@ -138,8 +148,8 @@ export class SnakeGameComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/member-ordering
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent): void {
-    let xInput = 0;
-    let yInput = 0;
+    let xInput: -1 | 0 | 1 = 0;
+    let yInput: -1 | 0 | 1 = 0;
     switch (event.key) {
       case 'd':
       case 'ArrowRight':
@@ -165,8 +175,8 @@ export class SnakeGameComponent implements OnInit {
   }
 
   onPan(event: any): void {
-    let xInput = 0;
-    let yInput = 0;
+    let xInput: -1 | 0 | 1 = 0;
+    let yInput: -1 | 0 | 1 = 0;
     switch (event.additionalEvent) {
       case 'panright':
         xInput = 1;
@@ -187,15 +197,17 @@ export class SnakeGameComponent implements OnInit {
     this.changeDirection(xInput, yInput);
   }
 
-  changeDirection(xChange: number, yChange: number): void {
+  changeDirection(xChange: -1 | 0 | 1, yChange: -1 | 0 | 1): void {
+    const lastX = this.player.xDirection[this.player.xDirection.length - 1];
+    const lastY = this.player.yDirection[this.player.yDirection.length - 1];
     // Only perpendicular inputs are valid
-    if (this.player.xDirection === 0 && xChange) {
-      this.player.xDirection += xChange;
-      this.player.yDirection = 0;
+    if (lastX === 0 && xChange) {
+      this.player.xDirection.push(xChange);
+      this.player.yDirection.push(0);
     }
-    else if (this.player.yDirection === 0 && yChange) {
-      this.player.yDirection += yChange;
-      this.player.xDirection = 0;
+    else if (lastY === 0 && yChange) {
+      this.player.yDirection.push(yChange);
+      this.player.xDirection.push(0);
     }
   }
 
