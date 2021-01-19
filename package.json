@@ -27,9 +27,9 @@
     }
   },
   "lint-staged": {
-    "*.html": "ng lint",
+    "*.html": "eslint",
     "*.scss": "styelint",
-    "*.ts": "ng lint"
+    "*.ts": "eslint"
   },
   "private": true,
   "dependencies": {
