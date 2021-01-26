@@ -112,6 +112,16 @@ npm run lint
 ```
 
 ## Helpful Assorted Commands
+Generate a new module "XXX" and add a "YYY" component as the route inside app.module. Use this set up a Single Component Angular Module (SCAM) to enable lazy-loading for a new project/card.
+```
+ng g module XXX --route YYY --module app.module
+```
+
+Example: add the colab-hosting page. 
+```
+ng g module pages/colab-hosting --route colab-hosting --module app.module
+```
+
 List all global packages
 ```
 npm list -g --depth 0
