@@ -91,6 +91,11 @@ source-map-explorer
 ```
 
 ## Helpful npm Scripts
+Modified `npm start` runs `ng serve --hmr --host 0.0.0.0` instead of the default `ng serve`.
+```
+npm start
+```
+
 Build the web app then host it locally using local-web-server. Use to simulate production for e2e testing. 
 ```
 npm run stage
