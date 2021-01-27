@@ -1,0 +1,38 @@
+.colab-card {
+  width: min(70%, 40em);
+  margin: min(10%, 5em) auto;
+  white-space: pre-wrap;
+}
+
+.text-block {
+  width: 100%;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-radio-button {
+  margin: 5px 0;
+}
+
+.mat-divider {
+  z-index: 1;
+}
+
+.mat-expansion-panel-header {
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.parameter-settings-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.parameter-setting {
+  width: 8em;
+  padding-right: 2%;
+}
