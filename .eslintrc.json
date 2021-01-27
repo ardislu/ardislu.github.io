@@ -37,6 +37,16 @@
             "style": "camelCase"
           }
         ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": [
+              "camelCase",
+              "UPPER_CASE"
+            ]
+          }
+        ],
         "no-underscore-dangle": "off"
       }
     },
