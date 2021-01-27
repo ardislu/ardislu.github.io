@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "*.html": "eslint",
-    "*.scss": "styelint",
+    "*.scss": "stylelint",
     "*.ts": "eslint"
   },
   "private": true,
