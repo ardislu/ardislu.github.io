@@ -102,16 +102,13 @@ export class SnakeGameComponent implements OnInit {
   }
 
   spawnFood(): void {
-    let newFood: SnekPiece = {
-      x: Math.floor(this.width * Math.random()),
-      y: Math.floor(this.height * Math.random())
-    };
-    while (this.player.body.some(p => p.x === newFood.x && p.y === newFood.y)) {
+    let newFood: SnekPiece;
+    do {
       newFood = {
         x: Math.floor(this.width * Math.random()),
         y: Math.floor(this.height * Math.random())
       };
-    }
+    } while (this.player.body.some(p => p.x === newFood.x && p.y === newFood.y));
     this.food = newFood;
   }
 
