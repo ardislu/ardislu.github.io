@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BostonParameters, BostonPrediction } from '../../models/colab-hosting.model';
 import { ColabHostingService } from '../../services/colab-hosting.service';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDialogComponent, NotificationDialogData } from '../../components/dialog/notification/notification-dialog.component';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-colab-hosting',
@@ -41,7 +45,7 @@ export class ColabHostingComponent implements OnInit {
     { value: 'bagging', viewValue: 'Extra Trees Regressor' }
   ];
 
-  constructor(private colab: ColabHostingService) { }
+  constructor(private colab: ColabHostingService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -98,7 +102,20 @@ export class ColabHostingComponent implements OnInit {
   }
 
   getPrice(): void {
-    this.showFirstContent = false;
-    this.bostonPrediction$ = this.colab.getBostonPrice(this.colabHost, this.selectedModel, new BostonParameters(this.customParams));
+    const handleError = (error: HttpErrorResponse) => {
+      this.showFirstContent = true; // Reset pricePlaceholder in case there was a previous success
+      const data: NotificationDialogData = {
+        title: 'Something went wrong',
+        body: 'Unable to connect to the backend. Make sure the Colab notebook is running!',
+        buttonText: 'OK'
+      };
+      this.dialog.open(NotificationDialogComponent, { data });
+      return throwError(error);
+    };
+
+    this.bostonPrediction$ = this.colab.getBostonPrice(this.colabHost, this.selectedModel, new BostonParameters(this.customParams)).pipe(
+      catchError(handleError),
+      tap(() => this.showFirstContent = false)
+    );
   }
 }

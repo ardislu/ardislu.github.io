@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ColabHostingRoutingModule } from './colab-hosting-routing.module';
 import { ColabHostingComponent } from './colab-hosting.component';
+import { DialogModule } from '../../components/dialog/dialog.module';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   imports: [
     CommonModule,
     ColabHostingRoutingModule,
+    DialogModule,
     MatCardModule,
     MatButtonModule,
     FormsModule,
