@@ -43,7 +43,7 @@
       </mat-form-field>
 
       <div class="parameter-settings-group">
-        <mat-form-field class="parameter-setting" *ngFor="let item of customParams | keyvalue">
+        <mat-form-field class="parameter-setting" *ngFor="let item of customParams | keyvalue; trackBy: trackByNull">
           <mat-label>{{ item.key }}</mat-label>
           <input matInput [value]="item.value" (change)="setParam(item.key, $event)" type="number" step="0.00001">
         </mat-form-field>

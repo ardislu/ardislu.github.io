@@ -94,6 +94,11 @@ export class ColabHostingComponent implements OnInit {
     }
   }
 
+  // Pass as a *ngFor trackBy function to disable re-rendering on this *ngFor loop
+  // Note: elements within the loop must handle data binding on their own
+  trackByNull(): void {
+  };
+
   // Custom behavior on param input field change instead of two-way data binding
   setParam(param: string, e: Event) {
     this.selectedType = 'custom';
