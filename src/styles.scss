@@ -31,6 +31,17 @@ a {
   font-weight: bold;
 }
 
+// Disable scroll to change number on number input fields (Safari, Chrome)
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+// Disable scroll to change number on number input fields (Firefox)
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* Global utility classes */
 // This fills the remaining space, by using flexbox.
 // Every toolbar row uses a flexbox row layout.
