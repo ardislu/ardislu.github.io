@@ -20,9 +20,11 @@ export class BostonParameters {
       LSTAT: this.initParams?.LSTAT
     };
     for (const [key, value] of Object.entries(params)) {
-      if (value !== undefined) {
-        this.stringParams[key] = String(value);
-        this.numberParams[key] = parseFloat(value as string);
+      const str = String(value);
+      const num = parseFloat(value as string);
+      if (!isNaN(num)) {
+        this.stringParams[key] = str;
+        this.numberParams[key] = num;
       }
     }
   }
