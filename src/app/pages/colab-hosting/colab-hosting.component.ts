@@ -50,6 +50,24 @@ export class ColabHostingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Force https:// on ngrok URL
+  setColabHost(e: Event): void {
+    const value = (e.target as HTMLInputElement).value;
+
+    // Matches: `http://${host}.ngrok.io` OR `https://${host}.ngrok.io`
+    if (/^(https?:\/\/)\w+.ngrok.io$/.test(value)) {
+      const url = new URL(value);
+      this.colabHost = `https://${url.host}`;
+    }
+    // Matches: `${host}.ngrok.io`
+    else if (/^\w+.ngrok.io$/.test(value)) {
+      this.colabHost = `https://${value}`;
+    }
+    else {
+      this.colabHost = '';
+    }
+  }
+
   // Custom behavior on radio button change instead of two-way data binding
   setSelectedType(type: 'average' | 'premium' | 'custom'): void {
     if (type === 'average') {
