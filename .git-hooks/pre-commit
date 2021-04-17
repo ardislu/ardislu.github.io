@@ -1,0 +1,32 @@
+#!/bin/sh
+
+root="$(git rev-parse --show-toplevel)" # Full file path to the directory where this git repo sits
+cd $root # Required to make the relative file paths to eslint and stylelint work
+
+for file in $(git diff --name-only --cached) # List of staged files
+do
+
+  filename="${file##*/}" # Remove all except the characters after the last '/'
+  extension="${filename##*.}" # Remove all except the characters after the last '.'
+
+  if [[ "$extension" =~ ^(js|ts)$ ]]; then
+    # Must pipe the output from 'git show' to the linter, do NOT directly run the linter
+    # on the file because that may contain changes that have been saved but not staged yet.
+    git show ":$file" | ./node_modules/.bin/eslint --stdin --stdin-filename "$filename"
+    if [ $? -ne 0 ]; then
+      echo "eslint failed on ${file}, aborting commit."
+      exit 1
+    fi
+  fi
+
+  if [[ "$extension" =~ ^(css|scss)$ ]]; then
+    # Must pipe the output from 'git show' to the linter, do NOT directly run the linter
+    # on the file because that may contain changes that have been saved but not staged yet.
+    git show ":$file" | ./node_modules/.bin/stylelint --stdin --stdin-filename "$filename"
+    if [ $? -ne 0 ]; then
+      echo "stylelint failed on ${file}, aborting commit."
+      exit 1
+    fi
+  fi
+
+done

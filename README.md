@@ -66,7 +66,9 @@ This trick may cause issues with SEO or website auditors like Lighthouse since a
 If you use `ng serve` or `npm run stage` to host a development web server, this step is not necessary since the development web server is appropriately configured. 
 
 # Pre-commit hook
-This project uses [Husky](https://www.npmjs.com/package/husky) and [lint-staged](https://www.npmjs.com/package/lint-staged) to do `eslint` (for HTML and TS) or `stylelint` (for SCSS) on staged files before each commit.
+The npm postinstall script configures git locally to run a custom pre-commit hook, located at `.git-hooks/pre-commit`.
+
+The `pre-commit` file is a bash script that pipes any staged .js or .ts files to `eslint`, and any staged .css or .scss files to `stylelint`.
 
 # Testing
 This project uses [Jest](https://www.npmjs.com/package/jest) for unit testing (instead of Jasmine + Karma), and [Playwright](https://www.npmjs.com/package/playwright) for e2e testing (instead of Protractor). The Angular architects have been adapted for these frameworks so tests are still run with the usual `npm run test` and `npm run e2e`.
