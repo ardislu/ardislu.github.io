@@ -19,8 +19,8 @@
     "test": "ng test",
     "lint": "ng lint && stylelint \"src/**/*.scss\"",
     "e2e": "ng e2e",
-    "stage": "ng build --prod && cd dist/ardis-lu-frontend && ws --spa index.html --log.format stats",
-    "analyze": "ng build --prod --source-map --vendor-chunk=false && source-map-explorer dist/ardis-lu-frontend/main.*.js"
+    "stage": "ng build --configuration production && cd dist/ardis-lu-frontend && ws --spa index.html --log.format stats",
+    "analyze": "ng build --configuration production --source-map --vendor-chunk=false && source-map-explorer dist/ardis-lu-frontend/main.*.js"
   },
   "private": true,
   "dependencies": {
