@@ -1,22 +1,22 @@
-@import "~@angular/material/theming";
+@use '~@angular/material' as mat;
 
 /* Use system font stack */
-$system-typography: mat-typography-config(
+$system-typography: mat.define-typography-config(
   $font-family: '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 );
 
 // Include only once per project
-@include mat-core($system-typography);
+@include mat.core($system-typography);
 
 /* Custom themes */
 @import "ardis-theme.scss";
 
 .al-dark {
-  @include angular-material-color($ardis-dark-theme);
+  @include mat.all-component-colors($ardis-dark-theme);
 }
 
 .al-light {
-  @include angular-material-color($ardis-light-theme);
+  @include mat.all-component-colors($ardis-light-theme);
 }
 
 /* Global element styling */
@@ -26,7 +26,7 @@ body {
 }
 
 a {
-  color: mat-color($al-accent);
+  color: mat.get-color-from-palette($al-accent);
   text-decoration: none;
   font-weight: bold;
 }
